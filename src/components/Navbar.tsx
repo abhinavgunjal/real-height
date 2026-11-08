@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Ruler, Scale, BarChart3, Search } from 'lucide-react';
+import { Scale, BarChart3, Search } from 'lucide-react';
 
 interface NavbarProps {
   unit: 'imperial' | 'metric';
@@ -20,33 +20,22 @@ export function Navbar({
   setActiveTab,
   compareCount,
   onOpenCompare,
-  totalCount = 1007
 }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0d0e11]/90 backdrop-blur-md border-b border-[#232730] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         
-        {/* Brand identity: Editorial, typographic, authentic */}
+        {/* Brand Identity - Clean, punchy & human */}
         <div 
           onClick={() => setActiveTab('explore')}
-          className="flex items-center gap-3 cursor-pointer group select-none"
+          className="flex items-center gap-2.5 cursor-pointer group select-none"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#1c1f26] border border-[#2e3340] flex items-center justify-center text-amber-400 group-hover:border-amber-500/50 transition-colors">
-            <Ruler className="w-4 h-4 stroke-[2]" />
+          <div className="w-8 h-8 rounded-lg bg-amber-500 text-black flex items-center justify-center font-black text-xs tracking-wider shadow-sm group-hover:bg-amber-400 group-hover:scale-105 transition-all">
+            RH
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-base tracking-tight text-white group-hover:text-amber-400 transition-colors">
-                Real Heights
-              </span>
-              <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#181a20] text-neutral-400 border border-[#2b303c]">
-                {totalCount} Stars
-              </span>
-            </div>
-            <p className="text-[11px] text-neutral-400 hidden sm:block">
-              Real Height vs Claimed Height
-            </p>
-          </div>
+          <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-amber-400 transition-colors">
+            Real<span className="text-amber-500">Heights</span>
+          </span>
         </div>
 
         {/* Primary View Navigation */}
